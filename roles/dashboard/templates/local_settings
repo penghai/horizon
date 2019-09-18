@@ -108,7 +108,6 @@ OPENSTACK_KEYSTONE_DOMAIN_CHOICES = (
 #    "cloud_admin": "rule:admin_required and domain_id:<your domain id>"
 # This value must be the name of the domain whose ID is specified there.
 #OPENSTACK_KEYSTONE_DEFAULT_DOMAIN = 'Default'
-OPENSTACK_KEYSTONE_DEFAULT_DOMAIN = 'Default'
 
 # Set this to True to enable panels that provide the ability for users to
 # manage Identity Providers (IdPs) and establish a set of rules to map
@@ -295,7 +294,6 @@ OPENSTACK_KEYSTONE_BACKEND = {
 # Setting this to True, will add a new "Retrieve Password" action on instance,
 # allowing Admin session password retrieval/decryption.
 #OPENSTACK_ENABLE_PASSWORD_RETRIEVE = False
-OPENSTACK_ENABLE_PASSWORD_RETRIEVE = True
 
 # The Launch Instance user experience has been significantly enhanced.
 # You can choose whether to enable the new launch instance experience,
@@ -326,17 +324,6 @@ LAUNCH_INSTANCE_NG_ENABLED = True
 #    'create_volume': True,
 #}
 
-
-LAUNCH_INSTANCE_DEFAULTS = {
-    'config_drive': False,
-    'enable_scheduler_hints': True,
-    'disable_image': False,
-    'disable_instance_snapshot': False,
-    'disable_volume': False,
-    'disable_volume_snapshot': False,
-    'create_volume': True,
-}
-
 # The Xen Hypervisor has the ability to set the mount point for volumes
 # attached to instances (other Hypervisors currently do not). Setting
 # can_set_mount_point to True will add the option to set the mount point
@@ -349,9 +336,9 @@ LAUNCH_INSTANCE_DEFAULTS = {
 #}
 
 OPENSTACK_HYPERVISOR_FEATURES = {
-    'can_set_mount_point': True,
-    'can_set_password': True,
-    'requires_keypair': True,
+    'can_set_mount_point': False,
+    'can_set_password': False,
+    'requires_keypair': False,
     'enable_quotas': True
 }
 
