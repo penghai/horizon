@@ -433,7 +433,7 @@ OPENSTACK_NEUTRON_NETWORK = {
     'enable_distributed_router': False,
     'enable_ha_router': True,
     'enable_fip_topology_check': True,
-    'default_dns_nameservers': ["114.114.114.114"],
+    'default_dns_nameservers': ["{{default_dns}}"],
     'supported_provider_types': [{% for ip in (tenant_network_type) %}'{{ip}}',{% endfor %}],
     'segmentation_id_range': {
         'vlan': {{network_vlan_ranges}},
