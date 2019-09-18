@@ -108,19 +108,18 @@ OPENSTACK_KEYSTONE_DOMAIN_CHOICES = (
 #    "cloud_admin": "rule:admin_required and domain_id:<your domain id>"
 # This value must be the name of the domain whose ID is specified there.
 #OPENSTACK_KEYSTONE_DEFAULT_DOMAIN = 'Default'
+OPENSTACK_KEYSTONE_DEFAULT_DOMAIN = 'Default'
 
 # Set this to True to enable panels that provide the ability for users to
 # manage Identity Providers (IdPs) and establish a set of rules to map
 # federation protocol attributes to Identity API attributes.
 # This extension requires v3.0+ of the Identity API.
 #OPENSTACK_KEYSTONE_FEDERATION_MANAGEMENT = False
-OPENSTACK_KEYSTONE_FEDERATION_MANAGEMENT = True
 
 # Set Console type:
 # valid options are "AUTO"(default), "VNC", "SPICE", "RDP", "SERIAL", "MKS"
 # or None. Set to None explicitly if you want to deactivate the console.
 #CONSOLE_TYPE = "AUTO"
-CONSOLE_TYPE = "VNC"
 
 # Toggle showing the openrc file for Keystone V2.
 # If set to false the link will be removed from the user dropdown menu
@@ -180,7 +179,6 @@ SECRET_KEY='d814a03aa2022c353cb7'
 #}
 
 SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
-
 CACHES = {
     'default': {
          'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
@@ -328,13 +326,14 @@ LAUNCH_INSTANCE_NG_ENABLED = True
 #    'create_volume': True,
 #}
 
+
 LAUNCH_INSTANCE_DEFAULTS = {
-    'config_drive': True,
+    'config_drive': False,
     'enable_scheduler_hints': True,
-    'disable_image': True,
-    'disable_instance_snapshot': True,
-    'disable_volume': True,
-    'disable_volume_snapshot': True,
+    'disable_image': False,
+    'disable_instance_snapshot': False,
+    'disable_volume': False,
+    'disable_volume_snapshot': False,
     'create_volume': True,
 }
 
@@ -352,7 +351,7 @@ LAUNCH_INSTANCE_DEFAULTS = {
 OPENSTACK_HYPERVISOR_FEATURES = {
     'can_set_mount_point': True,
     'can_set_password': True,
-    'requires_keypair': False,
+    'requires_keypair': True,
     'enable_quotas': True
 }
 
@@ -429,7 +428,7 @@ OPENSTACK_CINDER_FEATURES = {
 OPENSTACK_NEUTRON_NETWORK = {
     'enable_router': True,
     'enable_quotas': True,
-    'enable_ipv6': True,
+    'enable_ipv6': False,
     'enable_distributed_router': False,
     'enable_ha_router': True,
     'enable_fip_topology_check': True,
