@@ -436,8 +436,8 @@ OPENSTACK_NEUTRON_NETWORK = {
     'default_dns_nameservers': ["114.114.114.114"],
     'supported_provider_types': [{% for ip in (tenant_network_type) %}'{{ip}}',{% endfor %}],
     'segmentation_id_range': {
-        'vlan': [100, 200],
-        'vxlan': [10000, 20000],
+        'vlan': {{network_vlan_ranges}},
+        'vxlan': {{vni_ranges}},
     },
     'supported_vnic_types': ['*'],
     'physical_networks': ['{{physical_network}}'],
