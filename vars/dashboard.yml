@@ -1,0 +1,2 @@
+physical_network: service
+tenant_network_type: [vlan,vxlan]
