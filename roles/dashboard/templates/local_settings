@@ -337,8 +337,8 @@ LAUNCH_INSTANCE_NG_ENABLED = True
 
 OPENSTACK_HYPERVISOR_FEATURES = {
     'can_set_mount_point': False,
-    'can_set_password': False,
-    'requires_keypair': False,
+    'can_set_password': True,
+    'requires_keypair': True,
     'enable_quotas': True
 }
 
@@ -346,6 +346,7 @@ OPENSTACK_HYPERVISOR_FEATURES = {
 # neutron in the project instance table. Setting this to ``False`` may mitigate
 # a performance issue in the project instance table in large deployments.
 #OPENSTACK_INSTANCE_RETRIEVE_IP_ADDRESSES = True
+OPENSTACK_INSTANCE_RETRIEVE_IP_ADDRESSES = False
 
 # The OPENSTACK_CINDER_FEATURES settings can be used to enable optional
 # services provided by cinder that is not exposed by its extension API.
@@ -518,7 +519,8 @@ DROPDOWN_MAX_ITEMS = 30
 
 # The timezone of the server. This should correspond with the timezone
 # of your entire OpenStack installation, and hopefully be in UTC.
-TIME_ZONE = "UTC"
+#TIME_ZONE = "UTC"
+TIME_ZONE = "Asia/Shanghai"
 
 # When launching an instance, the menu of available flavors is
 # sorted by RAM usage, ascending. If you would like a different sort order,
